@@ -38,7 +38,7 @@ This is a small mobile application built using **React Native (CLI)** and **Redu
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/shivamarora08/OfflineCRUDApp.git
+   git clone https://github.com/shivam0111/offline-crud-react-native.git
    cd OfflineCRUDApp
 
    Install dependencies:
