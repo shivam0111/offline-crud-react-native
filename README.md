@@ -1,97 +1,82 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 📱 Offline CRUD App (React Native)
 
-# Getting Started
+This is a small mobile application built using **React Native (CLI)** and **Redux** to demonstrate:
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+- Offline data storage and retrieval using **SQLite**
+- Global state management with **Redux**
+- Basic **CRUD operations** (Create, Read, Update, Delete)
+- Optional syncing logic to simulate server integration
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 🚀 Features
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+- ✅ Offline-first architecture with SQLite database
+- ✅ Add, edit, delete items (e.g., notes/tasks)
+- ✅ Redux for managing global state
+- ✅ Form validations using **Formik + Yup**
+- ✅ Sync unsynced items to a mock remote server (optional bonus feature)
+- ✅ Polished UI with toasts and confirmations for better UX
 
-```sh
-# Using npm
-npm start
+---
 
-# OR using Yarn
-yarn start
-```
+## 📂 Folder Structure
 
-## Step 2: Build and run your app
+/src /components → Reusable UI components (like EmptyState, ItemForm) /redux → Redux store, actions, reducers /screens → Main screens: ItemList, AddEditItem /services → Database logic (SQLite CRUD & sync helpers) App.js → Navigation setup
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## 🛠️ Tech Stack
 
-### Android
+- **React Native CLI (v0.79.0)**
+- **Redux** (vanilla, no Toolkit)
+- **SQLite** (`react-native-sqlite-storage`)
+- **Formik** + **Yup** (form handling & validation)
+- Android tested ✅
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
-```
+## 🧪 How to Run
 
-### iOS
+1. Clone the repo:
+   ```bash
+   git clone https://github.com/shivamarora08/OfflineCRUDApp.git
+   cd OfflineCRUDApp
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+   Install dependencies:
+    npm install
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+2. Run on Android:
+    npx react-native run-android
 
-```sh
-bundle install
-```
+💡 If you're using a physical device, make sure USB debugging is on.
 
-Then, and every time you update your native dependencies, run:
+Sync Feature (Optional)
+If you're connected to the internet and want to simulate syncing:
 
-```sh
-bundle exec pod install
-```
+Add some new items (they'll be marked as synced = 0).
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Press the Sync button in the Item List screen.
 
-```sh
-# Using npm
-npm run ios
+Items will be marked as "synced" locally after a fake API call.
 
-# OR using Yarn
-yarn ios
-```
+ℹ️ Syncing is handled via SQLite and updates synced flag after a delay (no real backend used).
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+## 📸 Screenshots
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### 🏠 Item List Screen
+<img src="assets/screenshot3.jpeg" width="300"/>
 
-## Step 3: Modify your app
+### ✏️ Update Item Screen
+<img src="assets/screenshot2.jpeg" width="300"/>
 
-Now that you have successfully run the app, let's make changes!
+### 🔄 Sync Alert
+<img src="assets/screenshot1.jpeg" width="300"/>
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+### ➕ Add Item Screen
+<img src="assets/screenshot4.jpeg" width="300"/>
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### 📭 Empty State
+<img src="assets/screenshot5.jpeg" width="300"/>
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## 🧪 Demo
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![App Demo](assets/demo.gif)
